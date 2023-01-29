@@ -1,6 +1,4 @@
-// Function para salvar os dados e alterar dados
 function save() {
-
     var read = document.getElementById('inputBookIsComplete');
     if (read.checked == true) {
         bookList = JSON.parse(localStorage.getItem('listItem3')) ?? []
@@ -59,9 +57,8 @@ function save() {
     document.getElementById('form').reset()
 }
 
-
-// funtion allData funcões para exibir os dados
 function allData() {
+
     table.innerHTML = ``
     bookList = JSON.parse(localStorage.getItem('listItem4')) ?? []
     bookList.forEach(function (value, i) {
@@ -122,10 +119,11 @@ function allData() {
         // }
 
     })
+
 }
 
-// Funcção para remover dados
 function removeData3(id) {
+
     bookList = JSON.parse(localStorage.getItem('listItem3')) ?? []
     bookList = bookList.filter(function (value) {
         return value.id != id;
@@ -134,16 +132,8 @@ function removeData3(id) {
     localStorage.setItem('listItem3', JSON.stringify(bookList))
     allData()
 }
-function removeData4(id) {
-    bookList = JSON.parse(localStorage.getItem('listItem4')) ?? []
-    bookList = bookList.filter(function (value) {
-        return value.id != id;
-    });
-    localStorage.setItem('listItem4', JSON.stringify(bookList))
-    allData()
-}
 
-function findData(id) {
+function find(id) {
     bookList = JSON.parse(localStorage.getItem('listItem4')) ?? []
     bookList.forEach(function (value) {
         if (value.id == id) {
@@ -156,8 +146,8 @@ function findData(id) {
     })
 }
 
-//Função para mover dados para um armazenamento diferente
-function readData(id1, title1, author1, year1) {
+
+function read(id1, title1, author1, year1) {
     if (id1) {
         var item = [{
             id: id1,
@@ -179,26 +169,3 @@ function readData(id1, title1, author1, year1) {
     localStorage.setItem('listItem4', JSON.stringify(bookList4))
     allData()
 }
-function read2(id1, title1, author1, year1) {
-    if (id1) {
-        var item = [{
-            id: id1,
-            title: title1,
-            author: author1,
-            year: year1,
-            isComplete: 1,
-        }];
-        bookList = JSON.parse(localStorage.getItem('listItem4')) ?? []
-        books = item.concat(bookList);
-        var itemString = JSON.stringify(books);
-        localStorage.setItem('listItem4', itemString);
-    }
-
-    bookList3 = JSON.parse(localStorage.getItem('listItem3')) ?? []
-    bookList3 = bookList3.filter(function (value) {
-        return value.id != id1;
-    });
-    localStorage.setItem('listItem3', JSON.stringify(bookList3))
-    allData()
-}
-

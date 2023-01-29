@@ -1,3 +1,28 @@
+.imgLogo {
+    height: 50px;
+    width: 120px;
+}
+
+a:hover {
+    text-decoration: none;
+    color: navy;
+    font-weight: bold;
+}
+
+#slide-out li a:hover {
+    color: navy;
+    font-weight: bold;
+}
+
+.divCenter {
+    margin: auto;
+    width: 50%;
+}
+
+.modal-body .form-horizontal {
+    width: 100%;
+}
+
 #offcanvasNavbarLabel {
     position: relative;
     left: 150px;
@@ -16,27 +41,7 @@ main {
     color: white;
 }
 
-.imgLogo {
-    height: 50px;
-    width: 120px;
-}
-
-a:hover {
-    text-decoration: none;
-    color: bisque;
-    font-weight: bold;
-}
-
-#slide-out li a:hover {
-    color: navy;
-    font-weight: bold;
-}
-
-.divCenter {
-    margin: auto;
-    width: 50%;
-}
-
-.modal-body .form-horizontal {
-    width: 100%;
+.todos-os-diretos {
+    position: relative;
+    right: 873px;
 }
