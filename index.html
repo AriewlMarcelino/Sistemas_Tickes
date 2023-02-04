@@ -34,123 +34,136 @@
                         <ul class="navbar-nav mn-nav  justify-content-end flex-grow-1 pe-3">
                             <li class="nav-item">
                                 <a class="nav-link active text-white text-center fs-4 p-4" aria-current="page"
-                                    href="#">Em breve...</a>
+                                    href="#">Chamados
+                                    Disponiveis</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white text-center fs-4 p-4" href="#"></a>
+                                <a class="nav-link text-white text-center fs-4 p-4" href="#">Editar Chamados</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white text-center fs-4 p-4" href="#"></a>
+                                <a class="nav-link text-white text-center fs-4 p-4" href="#">Excluir Chamados</a>
                             </li>
                             <li class="nav-item text-white text-center fs-4 p-4">
-                                <a class="nav-link text-white" href="#"></a>
+                                <a class="nav-link text-white" href="#">Atualizar Chamados</a>
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
         </nav>
-    </header>
-    <main>
-        <div class="container-fluid col-10 mt-4">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="alert text-center">
-                        Central de Chamados
-                    </h1>
-                </div>
-                <div class="col-lg-4">
-                    <div class="card shadow p-2 mb-5 bg-body-tertiary rounded">
-                        <div class="card-body">
-                            <form id="form">
-                                <input type="hidden" name="id" id="inputBookId">
-                                <label for="inputBookTitle" class="name-input">Titulo do problema:</label>
-                                <input type="text" placeholder="insira o titulo do problema" class="form-control"
-                                    id="inputBookTitle" required>
-                                <br>
-                                <label for="inputBookAuthor" class="name-input">Nome do Responsavél:</label>
-                                <input type="text" placeholder="Author" class="form-control" id="inputBookAuthor"
-                                    required>
-                                <br>
-                                <label for="inputBookYear" class="name-input">Data do caso:</label>
-                                <input type="datetime" placeholder="Data do caso" class="form-control"
-                                    id="inputBookYear" required>
-                                <br>
-                                <label for="inputBookIsComplete" class="name-input"></label>
-
-                                <br>
-                                <br>
-                                <button class="btn btn-sm btn-primary text-uppercase" id="buttom-main" type="button"
-                                    onclick="save()">Adicionar</button>
-                            </form>
-                        </div>
+        <main>
+            <div class="container-fluid col-10 mt-4">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="alert text-center">
+                            Central de Chamados
+                        </h1>
                     </div>
-                </div>
-                <div class="col-lg-8">
-                    <div class="card shadow p-3 mb-5 bg-body-tertiary rounded">
-                        <div class="card-body">
-                            <!-- tabela de casos em aberto -->
-                            <h2>Casos em aberto</h2>
-                            <div class="table-responsive">
-                                <table id="datatable" class="table table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>Titulo do caso</th>
-                                            <th>Responsavél</th>
-                                            <th>Data do caso</th>
-                                            <th>Ver caso </th>
-                                            <th>Editar caso</th>
-                                            <th>Excluir caso</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="table">
+                    <div class="col-lg-4">
+                        <div class="card shadow p-2 mb-5 bg-body-tertiary rounded">
+                            <div class="card-body">
+                                <form id="form">
+                                    <input type="hidden" class="" name="id" id="inputBookId">
+                                    <label for="inputBookTitle">Titulo do problema:</label>
+                                    <input type="text" placeholder="insira o titulo do problema" class="form-control"
+                                        id="inputBookTitle" required>
+                                    <br>
 
-                                    </tbody>
-                                </table>
-                            </div>
-                            <hr>
-                            <!-- Tabela de casos em atendimento -->
-                            <h2>Casos em atendimento</h2>
-                            <div class="table-responsive">
-                                <table id="datatable" class="table table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>Titulo do caso</th>
-                                            <th>Responsavél </th>
-                                            <th>Data do caso</th>
-                                            <th>Ver caso</th>
-                                            <th>Editar caso</th>
-                                            <th>Excluir caso</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="table2">
-                                    </tbody>
-                                </table>
+
+
+                                    <label for="inputBookAuthor">Nome do Responsavél:</label>
+                                    <input type="text" placeholder="Author" class="form-control" id="inputBookAuthor"
+                                        required>
+                                    <br>
+                                    <label for="inputBookYear">Data do caso:</label>
+                                    <input type="text" placeholder="dd/mm/aa" class="form-control" id="inputBookYear"
+                                        required>
+                                    <br>
+                                    <label for="inputBookIsComplete">Finished reading</label>
+                                    <input class="name-input" id="inputBookIsComplete" type="checkbox">
+                                    <br>
+                                    <br>
+                                    <button class="btn btn-sm btn-primary" id="buttom-main" type=" button"
+                                        onclick="save()">Adicionar</button>
+                                </form>
                             </div>
                         </div>
                     </div>
+                    <div class="col-lg-8">
+                        <div class="card shadow p-3 mb-5 bg-body-tertiary rounded">
+                            <div class="card-body">
+                                <!-- tabela de casos em aberto -->
+                                <h2>Casos em aberto</h2>
+                                <div class="table-responsive">
+                                    <table id="datatable" class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Titulo do caso</th>
+                                                <th>Responsavél</th>
+                                                <th>Data do caso</th>
+                                                <th>Ver caso</th>
+                                                <th>Editar caso</th>
+                                                <th>Excluir caso</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="table">
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <hr>
+                                <!-- Tabela de casos em atendimento -->
+                                <h2>Casos em atendimento</h2>
+                                <div class="table-responsive">
+                                    <table id="datatable" class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Titulo do caso</th>
+                                                <th>Responsavél</th>
+                                                <th>Data do caso</th>
+                                                <th>Ver caso</th>
+                                                <th>Editar caso</th>
+                                                <th>Excluir caso</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="table2">
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
                 </div>
             </div>
-        </div>
-    </main>
+        </main>
+        <footer>
+            <nav class="navbar navbar-expand-lg bg-dark fixed-bottom">
+                <div class="container-fluid ">
+                    <a class="navbar-brand" href="#"></a>
+                    <p class="text-white p-2 todos-os-diretos">Todos os direitos reservados</p>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    </button>
+                </div>
+            </nav>
+        </footer>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+        <script src="script.js"></script>
+        <script>
+            allData()
+        </script>
+        <script>
+            function clearData() {
+                document.getElementById('form').reset()
+                document.getElementById('id').value = ""
+            }
+        </script>
+    </header>
 </body>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js">
-</script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
-
-<script src="/script.js"></script>
-<script>
-    allData()
-</script>
-<script>
-    function clearData() {
-        document.getElementById('form').reset()
-        document.getElementById('id').value = ""
-    }
-</script>
 
 </html>

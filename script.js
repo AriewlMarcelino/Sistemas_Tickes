@@ -64,8 +64,8 @@ function allData() {
     bookList.forEach(function (value, i) {
 
         var table = document.getElementById('table')
-        // if(value.isComplete == 0){
-        table.innerHTML += `
+        if (value.isComplete == 0) {
+            table.innerHTML += `
             <tr>
                 <td>${i + 1}</td>
                 <td>${value.title}</td>
@@ -85,8 +85,7 @@ function allData() {
                     </button>
                 </td>
             </tr>`
-        // }
-
+        }
     })
     table2.innerHTML = ``
     bookList2 = JSON.parse(localStorage.getItem('listItem3')) ?? []
